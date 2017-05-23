@@ -1,0 +1,8 @@
+---
+name: BYU Shared Icons
+description: SVG icons to be shared between sites and the themed components.
+resources:
+  - src: dist/**
+    dest: ./
+entrypoints:
+docs: https://github.com/byuweb/web-component-polyfills
