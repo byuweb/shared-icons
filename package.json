@@ -7,10 +7,11 @@
   "author": "BYU Web Community",
   "license": "Apache-2.0",
   "scripts": {
+    "build-favicons": "mkdirp dist/favicons && cp src/favicons/* dist/favicons/",
     "build-fa": "mkdirp dist/fontawesome && fontello-svg --file-format {1}-{2}.svg --no-css --config ./src/fontello-config.json --out dist/fontawesome --fill-colors \"white:rgb(256,256,256)|black:rgb(0,0,0)|navy:#002e5d\" && svgo --config=src/logos/svgo.yml -f src/fontawesome --output dist/fontawesome",
     "build-logos": "mkdirp dist/logos && svgo --config=src/logos/svgo.yml -f src/logos --output dist/logos",
     "build-social": "mkdirp dist/social && svgo --config=src/logos/svgo.yml -f src/social --output dist/social && node src/obfuscate-social.js dist/social dist/social/obfuscated",
-    "build": "npm run build-fa && npm run build-logos && npm run build-social"
+    "build": "npm run build-fa && npm run build-logos && npm run build-social && npm run build-favicons"
   },
   "devDependencies": {
     "fontello-svg": "^0.5.0",
